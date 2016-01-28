@@ -3,19 +3,49 @@
 buildscript {
     repositories {
         jcenter()
+        mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.5.0'
-
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.11.3'
+        classpath 'com.jakewharton.sdkmanager:gradle-plugin:0.12.+'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
 
 allprojects {
+
+    apply plugin: 'android-sdk-manager'
+    apply plugin: 'com.github.ben-manes.versions'
+    apply plugin: 'jacoco'
+
+    jacoco {
+        toolVersion = '0.7.1.201405082137'
+    }
+
     repositories {
         jcenter()
+        mavenCentral()
     }
+
+
+    ext._compileSdkVersion = 23
+    ext._buildToolsVersion = '23.0.2'
+    ext._minSdkVersion = 17
+    ext._targetSdkVersion = 23
+    ext._versionCode = 1
+    ext._versionName = "0.0.1"
+    ext._applicationId = "nl.endran.skeleton.kotlin"
+
+    ext.appCompatVersion = '23.1.1'
+    ext.androidAssertJVersion = '1.1.1'
+    ext.daggerVersion = '2.0.2'
+    ext.jUnitVersion = '4.12'
+    ext.javaxAnnotationVersion = '10.0-b28'
+    ext.licenseDialogVersion = '1.8.0'
+    ext.mockitoVersion = '1.10.19'
+    ext.stethoVersion = '1.2.0'
+    ext.timberVersion = '4.1.0'
 }
 
 task clean(type: Delete) {
