@@ -19,6 +19,10 @@ abstract class BaseFragment<VM, P : BaseFragmentPresenter<VM>, V : BaseFragmentV
         return view!!.inflate(inflater, container, savedInstanceState)
     }
 
+    override fun onViewCreated(androidView: View?, savedInstanceState: Bundle?) {
+        view?.androidViewReady()
+    }
+
     override fun onDestroyView() {
         view?.deflate()
         view = null
@@ -28,6 +32,12 @@ abstract class BaseFragment<VM, P : BaseFragmentPresenter<VM>, V : BaseFragmentV
         super.onResume()
         presenter = createPresenter(activity.getAppComponent())
         view?.start(presenter!!)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        view?.stop()
+        presenter = null
     }
 
     abstract fun createView(appComponent: AppComponent): V

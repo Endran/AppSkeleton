@@ -8,13 +8,22 @@ import android.view.ViewGroup
 
 abstract class BaseFragmentView<VM, P : BaseFragmentPresenter<VM>> {
 
+    var rootView: View? = null
     var presenter: P? = null
 
     fun inflate(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
-        return inflater.inflate(getViewId(), container, false)
+        rootView = inflater.inflate(getViewId(), container, false)
+        return rootView!!
+    }
+
+    fun androidViewReady() {
+        if (rootView != null) {
+            prepare(rootView!!)
+        }
     }
 
     fun deflate() {
+        rootView = null
     }
 
     fun start(presenter: P) {
@@ -34,4 +43,6 @@ abstract class BaseFragmentView<VM, P : BaseFragmentPresenter<VM>> {
     abstract fun getViewId(): Int
 
     abstract fun getViewModel(): VM
+
+    abstract fun prepare(rootView: View);
 }
