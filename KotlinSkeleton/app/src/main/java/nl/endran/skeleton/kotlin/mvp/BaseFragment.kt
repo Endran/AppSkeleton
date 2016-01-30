@@ -24,6 +24,7 @@ abstract class BaseFragment<VM, P : BaseFragmentPresenter<VM>, V : BaseFragmentV
     }
 
     override fun onDestroyView() {
+        super.onDestroyView()
         view?.deflate()
         view = null
     }

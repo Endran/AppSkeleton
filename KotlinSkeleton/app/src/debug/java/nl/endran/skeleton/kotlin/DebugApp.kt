@@ -7,7 +7,7 @@ import com.facebook.stetho.Stetho
 import nl.endran.skeleton.kotlin.injections.AppComponent
 import timber.log.Timber
 
-class DebugApp : Application() {
+class DebugApp : App() {
 
     override fun onCreate() {
         super.onCreate()

@@ -11,7 +11,7 @@ abstract class BaseFragmentView<VM, P : BaseFragmentPresenter<VM>> {
     protected var rootView: View? = null
     protected var presenter: P? = null
 
-    fun inflate(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
+    open fun inflate(inflater: LayoutInflater, container: ViewGroup, @SuppressWarnings("unused") savedInstanceState: Bundle?): View {
         rootView = inflater.inflate(getViewId(), container, false)
         return rootView!!
     }
