@@ -1,41 +1,38 @@
-package nl.endran.skeleton.kotlin
+package nl.endran.skeleton.kotlin.example
 
-import nl.endran.skeleton.kotlin.example.ModelInteractor
 import org.assertj.core.api.Assertions
 import org.jetbrains.spek.api.Spek
 
-class ModelInteractorTest : Spek() {
+class ModelInteractorSpekTest : Spek() {
 
     init {
-        val testName = "testName"
+        val testName = "TEST_NAME"
 
         given("a ModelInteractor with name $testName") {
             val interactor = ModelInteractor(testName)
 
             on("calling executeSomeComplexOperation with an empty message") {
-                var operationResult: String? = null
+                var actual = ""
                 interactor.executeSomeComplexOperation("") {
-                    operationResult = it
-                    return@executeSomeComplexOperation null
+                    actual = it
                 }
 
                 val expected = "ModelInteractor $testName received an empty message"
                 it("should be equal to \"$expected\"") {
-                    Assertions.assertThat(operationResult).isEqualTo(expected)
+                    Assertions.assertThat(actual).isEqualTo(expected)
                 }
             }
 
             val testMessage = "testMessage"
             on("calling executeSomeComplexOperation with $testMessage") {
-                var operationResult: String? = null
+                var actual = ""
                 interactor.executeSomeComplexOperation(testMessage) {
-                    operationResult = it
-                    return@executeSomeComplexOperation null
+                    actual = it
                 }
 
                 val expected = "ModelInteractor $testName received $testMessage"
                 it("should be equal to \"$expected\"") {
-                    Assertions.assertThat(operationResult).isEqualTo(expected)
+                    Assertions.assertThat(actual).isEqualTo(expected)
                 }
             }
         }
