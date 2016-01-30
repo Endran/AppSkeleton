@@ -24,11 +24,11 @@ class SkeletonFragmentView : BaseFragmentView<SkeletonFragmentPresenter.Skeleton
     override fun getViewModel() = object : SkeletonFragmentPresenter.SkeletonFragmentViewModel {
 
         override fun showToast(message: String) {
-            rootView?.showToast("showToast called with message $message")
+            rootView?.showToast(message)
         }
 
         override fun showSnackbar(message: String) {
-            rootView?.showSnackBar("showSnackbar called with message $message")
+            rootView?.showSnackBar(message)
         }
     }
 }

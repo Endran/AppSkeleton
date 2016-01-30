@@ -11,13 +11,13 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import nl.endran.skeleton.kotlin.example.ExampleObject2;
+import nl.endran.skeleton.kotlin.example.ModelInteractor;
 
 @Module
 public class AppModule {
 
-    public static final String EXAMPLE_OBJECT_2_A = "EXAMPLE_OBJECT_2_A";
-    public static final String EXAMPLE_OBJECT_2_B = "EXAMPLE_OBJECT_2_B";
+    public static final String MODEL_INTERACTOR_A = "MODEL_INTERACTOR_A";
+    public static final String MODEL_INTERACTOR_B = "MODEL_INTERACTOR_B";
 
     @NonNull
     private final Context context;
@@ -55,14 +55,14 @@ public class AppModule {
     }
 
     @Provides
-    @Named(EXAMPLE_OBJECT_2_A)
-    public ExampleObject2 provideExampleObject2A() {
-        return new ExampleObject2("A");
+    @Named(MODEL_INTERACTOR_A)
+    public ModelInteractor provideModelInteractorA() {
+        return new ModelInteractor("A");
     }
 
     @Provides
-    @Named(EXAMPLE_OBJECT_2_B)
-    public ExampleObject2 provideExampleObject2B() {
-        return new ExampleObject2("B");
+    @Named(MODEL_INTERACTOR_B)
+    public ModelInteractor provideModelInteractorB() {
+        return new ModelInteractor("B");
     }
 }

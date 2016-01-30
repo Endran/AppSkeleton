@@ -15,6 +15,7 @@ local.properties
 **/.idea/compiler.xml
 **/.idea/workspace.xml
 **/.idea/copyright/profiles_settings.xml
+**/.idea/dictionaries/*.xml
 **/.idea/runConfigurations.xml
 **/.idea/encodings.xml
 **/.idea/gradle.xml

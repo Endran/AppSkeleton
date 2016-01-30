@@ -1,11 +1,15 @@
 package nl.endran.skeleton.kotlin.fragments
 
 import nl.endran.skeleton.kotlin.example.ModelInteractor
-import nl.endran.skeleton.kotlin.example.ExampleObject2
+import nl.endran.skeleton.kotlin.injections.AppModule
 import nl.endran.skeleton.kotlin.mvp.BaseFragmentPresenter
 import javax.inject.Inject
+import javax.inject.Named
 
-class SkeletonFragmentPresenter @Inject constructor() : BaseFragmentPresenter<SkeletonFragmentPresenter.SkeletonFragmentViewModel>() {
+class SkeletonFragmentPresenter @Inject constructor(
+        @Named(AppModule.MODEL_INTERACTOR_A) val toastInteractor: ModelInteractor,
+        @Named(AppModule.MODEL_INTERACTOR_B) val snackbarInteractor: ModelInteractor)
+: BaseFragmentPresenter<SkeletonFragmentPresenter.SkeletonFragmentViewModel>() {
 
     interface SkeletonFragmentViewModel {
         fun showToast(message: String)
@@ -13,16 +17,22 @@ class SkeletonFragmentPresenter @Inject constructor() : BaseFragmentPresenter<Sk
     }
 
     override fun onStart() {
+        // Use this callback to start some operation, like database a query
     }
 
     override fun onStop() {
+        // Stop any running operation that might be busy in the background
     }
 
     fun buttonToastClicked(message: String) {
-        viewModel?.showToast(message)
+        toastInteractor.executeSomeComplexOperation (message) {
+            viewModel?.showToast(it)
+        }
     }
 
     fun buttonSnackbarClicked(message: String) {
-        viewModel?.showSnackbar(message)
+        snackbarInteractor.executeSomeComplexOperation (message) {
+            viewModel?.showSnackbar(it)
+        }
     }
 }
