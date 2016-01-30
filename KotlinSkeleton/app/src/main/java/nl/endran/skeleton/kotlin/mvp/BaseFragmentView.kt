@@ -1,4 +1,4 @@
-package nl.endran.skeleton.kotlin.fragments
+package nl.endran.skeleton.kotlin.mvp
 
 import android.os.Bundle
 import android.support.annotation.LayoutRes
@@ -8,8 +8,8 @@ import android.view.ViewGroup
 
 abstract class BaseFragmentView<VM, P : BaseFragmentPresenter<VM>> {
 
-    var rootView: View? = null
-    var presenter: P? = null
+    protected var rootView: View? = null
+    protected var presenter: P? = null
 
     fun inflate(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View {
         rootView = inflater.inflate(getViewId(), container, false)
@@ -40,9 +40,9 @@ abstract class BaseFragmentView<VM, P : BaseFragmentPresenter<VM>> {
 
 
     @LayoutRes
-    abstract fun getViewId(): Int
+    protected abstract fun getViewId(): Int
 
-    abstract fun getViewModel(): VM
+    protected abstract fun getViewModel(): VM
 
-    abstract fun prepare(rootView: View);
+    protected abstract fun prepare(rootView: View);
 }

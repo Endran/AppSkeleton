@@ -1,4 +1,4 @@
-package nl.endran.skeleton.kotlin.fragments
+package nl.endran.skeleton.kotlin.mvp
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

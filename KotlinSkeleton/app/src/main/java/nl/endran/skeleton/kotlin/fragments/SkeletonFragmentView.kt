@@ -6,6 +6,7 @@ import nl.endran.skeleton.kotlin.example.ExampleObject1
 import nl.endran.skeleton.kotlin.example.ExampleObject2
 import nl.endran.skeleton.kotlin.injections.showSnackBar
 import nl.endran.skeleton.kotlin.injections.showToast
+import nl.endran.skeleton.kotlin.mvp.BaseFragmentView
 
 class SkeletonFragmentView : BaseFragmentView<SkeletonFragmentPresenter.SkeletonFragmentViewModel, SkeletonFragmentPresenter>() {
 
@@ -13,7 +14,7 @@ class SkeletonFragmentView : BaseFragmentView<SkeletonFragmentPresenter.Skeleton
         // Set click listeners and textViews etc
     }
 
-    override fun getViewId() = R.layout.activity_main
+    override fun getViewId() = R.layout.fragment_skeleton
 
     override fun getViewModel() = object : SkeletonFragmentPresenter.SkeletonFragmentViewModel {
         override fun coolCallBack1(exampleObject1: ExampleObject1) {
