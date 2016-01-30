@@ -26,8 +26,10 @@ allprojects {
     repositories {
         jcenter()
         mavenCentral()
+        maven {
+            url "http://repository.jetbrains.com/all"
+        }
     }
-
 
     ext._compileSdkVersion = 23
     ext._buildToolsVersion = '23.0.2'
@@ -45,6 +47,7 @@ allprojects {
     ext.licenseDialogVersion = '1.8.0'
     ext.mockitoVersion = '1.10.19'
     ext.stethoVersion = '1.2.0'
+    ext.spekVersion = '0.1.189'
     ext.timberVersion = '4.1.0'
 }
 

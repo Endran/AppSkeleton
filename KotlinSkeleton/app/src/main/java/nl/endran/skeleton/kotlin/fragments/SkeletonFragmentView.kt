@@ -6,8 +6,9 @@ import nl.endran.skeleton.kotlin.R
 import nl.endran.skeleton.kotlin.injections.showSnackBar
 import nl.endran.skeleton.kotlin.injections.showToast
 import nl.endran.skeleton.kotlin.mvp.BaseFragmentView
+import javax.inject.Inject
 
-class SkeletonFragmentView : BaseFragmentView<SkeletonFragmentPresenter.SkeletonFragmentViewModel, SkeletonFragmentPresenter>() {
+class SkeletonFragmentView @Inject constructor() : BaseFragmentView<SkeletonFragmentPresenter.SkeletonFragmentViewModel, SkeletonFragmentPresenter>() {
 
     override fun getViewId() = R.layout.fragment_skeleton
 
