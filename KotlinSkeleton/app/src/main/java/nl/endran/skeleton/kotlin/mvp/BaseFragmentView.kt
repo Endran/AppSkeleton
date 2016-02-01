@@ -38,11 +38,19 @@ abstract class BaseFragmentView<VM, P : BaseFragmentPresenter<VM>> {
         presenter = null
     }
 
-
+    /**
+     * Return the view id to be inflated
+     */
     @LayoutRes
     protected abstract fun getViewId(): Int
 
+    /**
+     * Create and return the implementation of the ViewModel
+     */
     protected abstract fun getViewModel(): VM
 
+    /**
+     * Convenience method so that the implementation knows when UI widget can be obtained and prepared.
+     */
     protected abstract fun prepare(rootView: View);
 }

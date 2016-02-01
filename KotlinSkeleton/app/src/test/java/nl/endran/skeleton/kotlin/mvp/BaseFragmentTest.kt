@@ -45,8 +45,6 @@ class BaseFragmentTest {
         baseFragment = TestBaseFragment()
     }
 
-    // -------
-
     @Test
     fun shouldReturnAndroidViewCreatedByView_WhenOnCreateViewIsCalled() {
         object : Expectations() {
@@ -124,6 +122,8 @@ class BaseFragmentTest {
         baseFragment.onResume()
         baseFragment.onDestroyView()
     }
+
+    // ---------------
 
     public inner class TestBaseFragment : BaseFragment<Any, BaseFragmentPresenter<Any>, BaseFragmentView<Any, BaseFragmentPresenter<Any>>>() {
         override fun createView(appComponent: AppComponent): BaseFragmentView<Any, BaseFragmentPresenter<Any>> {

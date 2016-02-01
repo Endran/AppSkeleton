@@ -14,7 +14,16 @@ abstract class BaseFragmentPresenter<VM> {
         viewModel = null
     }
 
-    abstract fun onStart();
-    abstract fun onStop();
+    /**
+     * Use this callback to start some operation, like database a query.<br>
+     * The viewModel is non-null.
+     */
+    protected abstract fun onStart();
+
+    /**
+     * Stop any running operation that might be busy in the background.<br>
+     * After this method is finished viewModel will be de-referenced.
+     */
+    protected abstract fun onStop();
 
 }

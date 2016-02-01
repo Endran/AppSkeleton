@@ -8,7 +8,7 @@ import nl.endran.skeleton.kotlin.injections.showToast
 import nl.endran.skeleton.kotlin.mvp.BaseFragmentView
 import javax.inject.Inject
 
-class SkeletonFragmentView @Inject constructor() : BaseFragmentView<SkeletonFragmentPresenter.SkeletonFragmentViewModel, SkeletonFragmentPresenter>() {
+class SkeletonFragmentView @Inject constructor() : BaseFragmentView<SkeletonFragmentPresenter.ViewModel, SkeletonFragmentPresenter>() {
 
     override fun getViewId() = R.layout.fragment_skeleton
 
@@ -22,7 +22,7 @@ class SkeletonFragmentView @Inject constructor() : BaseFragmentView<SkeletonFrag
         }
     }
 
-    override fun getViewModel() = object : SkeletonFragmentPresenter.SkeletonFragmentViewModel {
+    override fun getViewModel() = object : SkeletonFragmentPresenter.ViewModel {
 
         override fun showToast(message: String) {
             rootView?.showToast(message)

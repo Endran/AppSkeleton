@@ -9,9 +9,9 @@ import javax.inject.Named
 class SkeletonFragmentPresenter @Inject constructor(
         @Named(AppModule.MODEL_INTERACTOR_A) val toastInteractor: ModelInteractor,
         @Named(AppModule.MODEL_INTERACTOR_B) val snackbarInteractor: ModelInteractor)
-: BaseFragmentPresenter<SkeletonFragmentPresenter.SkeletonFragmentViewModel>() {
+: BaseFragmentPresenter<SkeletonFragmentPresenter.ViewModel>() {
 
-    interface SkeletonFragmentViewModel {
+    interface ViewModel {
         fun showToast(message: String)
         fun showSnackbar(message: String)
     }
