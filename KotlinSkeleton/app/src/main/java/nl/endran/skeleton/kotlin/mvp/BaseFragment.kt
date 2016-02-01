@@ -31,8 +31,10 @@ abstract class BaseFragment<VM, P : BaseFragmentPresenter<VM>, V : BaseFragmentV
 
     override fun onResume() {
         super.onResume()
-        presenter = createPresenter(activity.getAppComponent())
-        view?.start(presenter!!)
+        if (view != null) {
+            presenter = createPresenter(context.getAppComponent())
+            view?.start(presenter!!)
+        }
     }
 
     override fun onPause() {

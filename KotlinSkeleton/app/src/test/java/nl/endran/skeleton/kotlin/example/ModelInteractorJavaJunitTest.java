@@ -30,7 +30,6 @@ public class ModelInteractorJavaJunitTest {
 
     @Test
     public void ShouldInformViaCallbackThatTheMessageIsEmpty_WhenEmptyMessageIsProvided() {
-
         interactor.executeSomeComplexOperation("", lambdaMock);
 
         new Verifications() {{
