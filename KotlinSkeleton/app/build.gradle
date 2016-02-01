@@ -43,8 +43,7 @@ dependencies {
     debugCompile "com.facebook.stetho:stetho-urlconnection:${stethoVersion}"
 
     testCompile "junit:junit:${jUnitVersion}"
-    testCompile "org.mockito:mockito-all:${mockitoVersion}"
-    testCompile "org.mockito:mockito-core:${mockitoVersion}"
+    testCompile "org.jmockit:jmockit:${jMockitVersion}"
     testCompile("com.squareup.assertj:assertj-android:${androidAssertJVersion}"){
         exclude group: 'com.android.support', module: 'support-annotations'
     }

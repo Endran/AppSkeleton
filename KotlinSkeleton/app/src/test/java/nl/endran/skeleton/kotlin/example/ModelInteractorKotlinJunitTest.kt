@@ -3,7 +3,6 @@ package nl.endran.skeleton.kotlin.example
 import org.assertj.core.api.Assertions
 import org.junit.Before
 import org.junit.Test
-import org.mockito.MockitoAnnotations
 
 class ModelInteractorKotlinJunitTest {
 
@@ -13,7 +12,6 @@ class ModelInteractorKotlinJunitTest {
 
     @Before
     fun setUp() {
-        MockitoAnnotations.initMocks(this)
 
         interactor = ModelInteractor(testName)
     }

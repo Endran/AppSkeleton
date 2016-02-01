@@ -45,7 +45,7 @@ allprojects {
     ext.jUnitVersion = '4.12'
     ext.javaxAnnotationVersion = '10.0-b28'
     ext.licenseDialogVersion = '1.8.0'
-    ext.mockitoVersion = '1.10.19'
+    ext.jMockitVersion = '1.8'
     ext.stethoVersion = '1.2.0'
     ext.spekVersion = '0.1.189'
     ext.timberVersion = '4.1.0'
