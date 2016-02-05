@@ -13,10 +13,10 @@ abstract class BaseFragment<VM, P : BaseFragmentPresenter<VM>, V : BaseFragmentV
     var view: V? = null
     var presenter: P? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup, savedInstanceState: Bundle?): View? {
-        val appComponent = inflater.context.getAppComponent()
+    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        val appComponent = inflater!!.context.getAppComponent()
         view = createView(appComponent)
-        return view!!.inflate(inflater, container, savedInstanceState)
+        return view!!.inflate(inflater, container!!, savedInstanceState)
     }
 
     override fun onViewCreated(androidView: View?, savedInstanceState: Bundle?) {

@@ -47,7 +47,7 @@ allprojects {
     ext.licenseDialogVersion = '1.8.0'
     ext.jMockitVersion = '1.8'
     ext.stethoVersion = '1.2.0'
-    ext.spekVersion = '0.1.189'
+    ext.spekVersion = '0.1.194'
     ext.timberVersion = '4.1.0'
 }
 
