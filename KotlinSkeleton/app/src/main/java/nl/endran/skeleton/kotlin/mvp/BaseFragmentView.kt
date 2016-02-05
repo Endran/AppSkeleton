@@ -23,6 +23,7 @@ abstract class BaseFragmentView<VM, P : BaseFragmentPresenter<VM>> {
     }
 
     fun deflate() {
+        stop()
         rootView = null
     }
 
