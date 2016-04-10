@@ -1,13 +1,14 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+/*
+ * Copyright (c) 2016 by David Hardy. Licensed under the Apache License, Version 2.0.
+ */
+
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion _compileSdkVersion
     buildToolsVersion _buildToolsVersion
 
     defaultConfig {
-        applicationId _applicationId
         minSdkVersion _minSdkVersion
         targetSdkVersion _targetSdkVersion
         versionCode _versionCode
@@ -27,31 +28,9 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile project(':ui')
-    compile project(':backend')
-    compile project(':core')
-    compile project(':database')
-
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-
-    debugCompile "com.facebook.stetho:stetho:${stethoVersion}"
-    debugCompile "com.facebook.stetho:stetho-urlconnection:${stethoVersion}"
-
     testCompile "junit:junit:${jUnitVersion}"
     testCompile "org.jmockit:jmockit:${jMockitVersion}"
     testCompile("com.squareup.assertj:assertj-android:${androidAssertJVersion}") {
         exclude group: 'com.android.support', module: 'support-annotations'
-    }
-
-}
-
-buildscript {
-    ext.kotlin_version = '1.0.1-2'
-
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
