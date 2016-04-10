@@ -3,6 +3,7 @@
  */
 
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion _compileSdkVersion
@@ -28,9 +29,20 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
+    compile project(':core')
+
     testCompile "junit:junit:${jUnitVersion}"
     testCompile "org.jmockit:jmockit:${jMockitVersion}"
     testCompile("com.squareup.assertj:assertj-android:${androidAssertJVersion}") {
         exclude group: 'com.android.support', module: 'support-annotations'
+    }
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 }

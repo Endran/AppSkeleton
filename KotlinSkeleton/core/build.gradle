@@ -4,6 +4,7 @@
 
 apply plugin: 'com.android.library'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion _compileSdkVersion
@@ -39,5 +40,14 @@ dependencies {
     testCompile "org.jmockit:jmockit:${jMockitVersion}"
     testCompile("com.squareup.assertj:assertj-android:${androidAssertJVersion}") {
         exclude group: 'com.android.support', module: 'support-annotations'
+    }
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 }

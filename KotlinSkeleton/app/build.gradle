@@ -32,7 +32,7 @@ dependencies {
     compile project(':core')
     compile project(':database')
 
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 
     debugCompile "com.facebook.stetho:stetho:${stethoVersion}"
     debugCompile "com.facebook.stetho:stetho-urlconnection:${stethoVersion}"
@@ -46,12 +46,10 @@ dependencies {
 }
 
 buildscript {
-    ext.kotlin_version = '1.0.1-2'
-
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 }
