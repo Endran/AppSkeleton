@@ -2,14 +2,14 @@
  * Copyright (c) 2015 by David Hardy. Licensed under the Apache License, Version 2.0.
  */
 
-package nl.endran.skeleton.kotlin.injections
+package nl.endran.skeleton.injections
 
 import android.content.Context
 import android.support.design.widget.Snackbar
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
-import nl.endran.skeleton.kotlin.App
+import nl.endran.skeleton.App
 
 fun Context.getAppComponent(): AppComponent {
     return (applicationContext as App).appComponent

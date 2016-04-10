@@ -1,4 +1,4 @@
-package nl.endran.skeleton.kotlin.mvp
+package nl.endran.skeleton.mvp
 
 abstract class BaseFragmentPresenter<VM> {
 

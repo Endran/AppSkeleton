@@ -1,4 +1,4 @@
-package nl.endran.skeleton.kotlin.example
+package nl.endran.skeleton.example
 
 import org.assertj.core.api.Assertions
 import org.junit.Before

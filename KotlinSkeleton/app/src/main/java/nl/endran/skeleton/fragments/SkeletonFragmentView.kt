@@ -1,11 +1,11 @@
-package nl.endran.skeleton.kotlin.fragments
+package nl.endran.skeleton.fragments
 
 import android.view.View
 import kotlinx.android.synthetic.main.fragment_skeleton.view.*
-import nl.endran.skeleton.kotlin.R
-import nl.endran.skeleton.kotlin.injections.showSnackBar
-import nl.endran.skeleton.kotlin.injections.showToast
-import nl.endran.skeleton.kotlin.mvp.BaseFragmentView
+import nl.endran.skeleton.R
+import nl.endran.skeleton.injections.showSnackBar
+import nl.endran.skeleton.injections.showToast
+import nl.endran.skeleton.mvp.BaseFragmentView
 import javax.inject.Inject
 
 class SkeletonFragmentView @Inject constructor() : BaseFragmentView<SkeletonFragmentPresenter.ViewModel, SkeletonFragmentPresenter>() {

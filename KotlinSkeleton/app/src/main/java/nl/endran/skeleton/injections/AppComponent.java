@@ -1,10 +1,10 @@
-package nl.endran.skeleton.kotlin.injections;
+package nl.endran.skeleton.injections;
 
 import javax.inject.Singleton;
 
 import dagger.Component;
-import nl.endran.skeleton.kotlin.fragments.SkeletonFragmentPresenter;
-import nl.endran.skeleton.kotlin.fragments.SkeletonFragmentView;
+import nl.endran.skeleton.fragments.SkeletonFragmentPresenter;
+import nl.endran.skeleton.fragments.SkeletonFragmentView;
 
 @Singleton
 @Component(modules = {AppModule.class})

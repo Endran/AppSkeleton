@@ -40,7 +40,7 @@ allprojects {
     ext._targetSdkVersion = 23
     ext._versionCode = 1
     ext._versionName = "0.0.1"
-    ext._applicationId = "nl.endran.skeleton.kotlin"
+    ext._applicationId = "nl.endran.skeleton"
 
     ext.appCompatVersion = '23.1.1'
     ext.androidAssertJVersion = '1.1.1'

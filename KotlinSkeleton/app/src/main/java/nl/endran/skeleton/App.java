@@ -1,11 +1,11 @@
-package nl.endran.skeleton.kotlin;
+package nl.endran.skeleton;
 
 import android.app.Application;
 import android.os.Handler;
 
-import nl.endran.skeleton.kotlin.injections.AppComponent;
-import nl.endran.skeleton.kotlin.injections.AppModule;
-import nl.endran.skeleton.kotlin.injections.DaggerAppComponent;
+import nl.endran.skeleton.injections.AppComponent;
+import nl.endran.skeleton.injections.AppModule;
+import nl.endran.skeleton.injections.DaggerAppComponent;
 
 
 public class App extends Application {

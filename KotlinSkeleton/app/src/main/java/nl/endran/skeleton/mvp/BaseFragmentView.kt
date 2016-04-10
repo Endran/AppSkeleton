@@ -1,4 +1,4 @@
-package nl.endran.skeleton.kotlin.mvp
+package nl.endran.skeleton.mvp
 
 import android.os.Bundle
 import android.support.annotation.LayoutRes

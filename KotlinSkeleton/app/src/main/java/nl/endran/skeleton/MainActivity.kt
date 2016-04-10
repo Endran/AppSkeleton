@@ -1,9 +1,9 @@
-package nl.endran.skeleton.kotlin
+package nl.endran.skeleton
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import nl.endran.skeleton.kotlin.fragments.SkeletonFragment
+import nl.endran.skeleton.fragments.SkeletonFragment
 
 class MainActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package nl.endran.skeleton.kotlin.mvp
+package nl.endran.skeleton.mvp
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import mockit.Expectations
 import mockit.Mocked
 import mockit.Verifications
-import nl.endran.skeleton.kotlin.App
-import nl.endran.skeleton.kotlin.injections.AppComponent
+import nl.endran.skeleton.App
+import nl.endran.skeleton.injections.AppComponent
 import org.assertj.core.api.Assertions
 import org.junit.Before
 import org.junit.Test

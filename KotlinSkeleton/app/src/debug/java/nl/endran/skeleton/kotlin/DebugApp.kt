@@ -1,4 +1,4 @@
-package nl.endran.skeleton.kotlin
+package nl.endran.skeleton
 
 import com.facebook.stetho.Stetho
 import timber.log.Timber

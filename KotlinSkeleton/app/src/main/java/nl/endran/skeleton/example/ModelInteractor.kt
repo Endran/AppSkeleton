@@ -1,4 +1,4 @@
-package nl.endran.skeleton.kotlin.example
+package nl.endran.skeleton.example
 
 class ModelInteractor(val name: String) {
     fun executeSomeComplexOperation(message: String, function: (String) -> Unit) {

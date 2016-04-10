@@ -1,7 +1,7 @@
-package nl.endran.skeleton.kotlin.fragments
+package nl.endran.skeleton.fragments
 
-import nl.endran.skeleton.kotlin.injections.AppComponent
-import nl.endran.skeleton.kotlin.mvp.BaseFragment
+import nl.endran.skeleton.injections.AppComponent
+import nl.endran.skeleton.mvp.BaseFragment
 
 class SkeletonFragment : BaseFragment<SkeletonFragmentPresenter.ViewModel, SkeletonFragmentPresenter, SkeletonFragmentView>() {
 

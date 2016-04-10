@@ -1,8 +1,8 @@
-package nl.endran.skeleton.kotlin.fragments
+package nl.endran.skeleton.fragments
 
-import nl.endran.skeleton.kotlin.example.ModelInteractor
-import nl.endran.skeleton.kotlin.injections.AppModule
-import nl.endran.skeleton.kotlin.mvp.BaseFragmentPresenter
+import nl.endran.skeleton.example.ModelInteractor
+import nl.endran.skeleton.injections.AppModule
+import nl.endran.skeleton.mvp.BaseFragmentPresenter
 import javax.inject.Inject
 import javax.inject.Named
 

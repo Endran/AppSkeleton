@@ -1,4 +1,4 @@
-package nl.endran.skeleton.kotlin;
+package nl.endran.skeleton;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -1,12 +1,12 @@
-package nl.endran.skeleton.kotlin.mvp
+package nl.endran.skeleton.mvp
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import nl.endran.skeleton.kotlin.injections.AppComponent
-import nl.endran.skeleton.kotlin.injections.getAppComponent
+import nl.endran.skeleton.injections.AppComponent
+import nl.endran.skeleton.injections.getAppComponent
 
 abstract class BaseFragment<VM, P : BaseFragmentPresenter<VM>, V : BaseFragmentView<VM, P>> : Fragment() {
 

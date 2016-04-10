@@ -1,4 +1,4 @@
-package nl.endran.skeleton.kotlin.injections;
+package nl.endran.skeleton.injections;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -11,7 +11,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import nl.endran.skeleton.kotlin.example.ModelInteractor;
+import nl.endran.skeleton.example.ModelInteractor;
 
 @Module
 public class AppModule {
