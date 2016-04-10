@@ -4,14 +4,17 @@ buildscript {
     repositories {
         jcenter()
         mavenCentral()
+        maven { url 'https://jitpack.io' } // Needed for workaround version of SDK manager
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.5.0'
+        classpath 'com.android.tools.build:gradle:2.0.0'
         classpath 'com.github.ben-manes:gradle-versions-plugin:0.11.3'
-        classpath 'com.jakewharton.sdkmanager:gradle-plugin:0.12.+'
+//        classpath 'com.jakewharton.sdkmanager:gradle-plugin:0.12.+'
+        classpath 'com.github.JakeWharton:sdk-manager-plugin:220bf7a88a7072df3ed16dc8466fb144f2817070' // Workaround version for gradle 2.10
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
+
 
 allprojects {
 
@@ -41,14 +44,13 @@ allprojects {
 
     ext.appCompatVersion = '23.1.1'
     ext.androidAssertJVersion = '1.1.1'
-    ext.daggerVersion = '2.0.2'
+    ext.daggerVersion = '2.3'
     ext.jUnitVersion = '4.12'
     ext.javaxAnnotationVersion = '10.0-b28'
     ext.licenseDialogVersion = '1.8.0'
-    ext.jMockitVersion = '1.8'
-    ext.stethoVersion = '1.2.0'
-    ext.spekVersion = '0.1.194'
-    ext.timberVersion = '4.1.0'
+    ext.jMockitVersion = '1.22'
+    ext.stethoVersion = '1.3.1'
+    ext.timberVersion = '4.1.2'
 }
 
 task clean(type: Delete) {
