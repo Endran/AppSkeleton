@@ -45,7 +45,7 @@ dependencies {
 
     testCompile "junit:junit:${jUnitVersion}"
     testCompile "org.jmockit:jmockit:${jMockitVersion}"
-    testCompile("com.squareup.assertj:assertj-android:${androidAssertJVersion}"){
+    testCompile("com.squareup.assertj:assertj-android:${androidAssertJVersion}") {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
 
