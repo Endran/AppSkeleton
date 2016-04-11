@@ -17,7 +17,6 @@ import nl.endran.skeleton.injections.AppComponent;
 import nl.endran.skeleton.injections.AppModule;
 import nl.endran.skeleton.injections.DaggerAppComponent;
 
-
 public class App extends Application {
 
     private AppComponent appComponent;

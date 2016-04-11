@@ -32,9 +32,7 @@ dependencies {
 
     compile project(':core')
 
-    compile "com.google.dagger:dagger:${daggerVersion}"
     apt "com.google.dagger:dagger-compiler:${daggerVersion}"
-    provided "org.glassfish:javax.annotation:${javaxAnnotationVersion}"
 
     testCompile "junit:junit:${jUnitVersion}"
     testCompile "org.jmockit:jmockit:${jMockitVersion}"

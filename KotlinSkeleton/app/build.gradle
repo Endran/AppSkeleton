@@ -34,9 +34,7 @@ dependencies {
 
     compile "com.android.support:design:${appCompatVersion}"
 
-    compile "com.google.dagger:dagger:${daggerVersion}"
     apt "com.google.dagger:dagger-compiler:${daggerVersion}"
-    provided "org.glassfish:javax.annotation:${javaxAnnotationVersion}"
 
     compile("de.psdev.licensesdialog:licensesdialog:${licenseDialogVersion}") {
         exclude module: 'support-v4'
