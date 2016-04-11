@@ -10,10 +10,12 @@ import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Component;
+import dagger.Subcomponent;
+import nl.endran.core.Core;
 import nl.endran.core.ModelInteractor;
 
 @Singleton
-@Component(modules = {AndroidModule.class, ModelModule.class})
+@Subcomponent(modules = {AndroidModule.class, ModelModule.class})
 public interface CoreComponent {
 
     Context getContext();

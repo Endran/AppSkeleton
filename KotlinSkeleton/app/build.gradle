@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-//apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion _compileSdkVersion
@@ -31,7 +31,16 @@ dependencies {
     compile project(':core')
     compile project(':backend')
     compile project(':database')
-    compile project(':ui')
+
+    compile "com.android.support:design:${appCompatVersion}"
+
+    compile "com.google.dagger:dagger:${daggerVersion}"
+    apt "com.google.dagger:dagger-compiler:${daggerVersion}"
+    provided "org.glassfish:javax.annotation:${javaxAnnotationVersion}"
+
+    compile("de.psdev.licensesdialog:licensesdialog:${licenseDialogVersion}") {
+        exclude module: 'support-v4'
+    }
 
     debugCompile "com.facebook.stetho:stetho:${stethoVersion}"
     debugCompile "com.facebook.stetho:stetho-urlconnection:${stethoVersion}"

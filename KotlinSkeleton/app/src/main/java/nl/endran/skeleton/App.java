@@ -8,76 +8,79 @@ import android.app.Application;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 
+import nl.endran.backend.injections.BackendModule;
+import nl.endran.core.Core;
 import nl.endran.core.injections.AndroidModule;
-import nl.endran.core.injections.CoreComponent;
-import nl.endran.core.injections.DaggerCoreComponent;
 import nl.endran.core.injections.ModelModule;
-import nl.endran.ui.UiApplication;
-import nl.endran.ui.injections.DaggerUiComponent;
-import nl.endran.ui.injections.UiComponent;
-import nl.endran.ui.injections.UiModule;
+import nl.endran.database.injections.DatabaseModule;
+import nl.endran.skeleton.injections.AppComponent;
+import nl.endran.skeleton.injections.AppModule;
+import nl.endran.skeleton.injections.DaggerAppComponent;
 
 
-public class App extends Application implements UiApplication {
+public class App extends Application {
 
-    CoreComponent coreComponent;
-    UiComponent uiComponent;
+    private AppComponent appComponent;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
-        AndroidModule androidModule = getAndroidModule();
-        ModelModule modelModule = getModelModule();
-        UiModule uiModule = getUiModule();
+        ModelModule modelModule = createModelModule();
+        AndroidModule androidModule = createAndroidModule();
+        BackendModule backendModule = createBackendModule();
+        DatabaseModule databaseModule = createDatabaseModule();
+        AppModule appModule = createAppModule();
 
-        coreComponent = createCoreComponent(androidModule, modelModule);
-        uiComponent = createUiComponent(androidModule, modelModule, uiModule);
+        appComponent = createAppComponent(androidModule, modelModule, backendModule, databaseModule, appModule);
+
+        Core core = appComponent.getCore();
+        core.start();
     }
 
-    UiComponent createUiComponent(
-            @NonNull final AndroidModule androidModule,
-            @NonNull final ModelModule modelModule,
-            @NonNull final UiModule uiModule) {
-        return DaggerUiComponent.builder()
-                .androidModule(androidModule)
-                .modelModule(modelModule)
-                .uiModule(uiModule)
-                .build();
-    }
+    AppComponent createAppComponent(
+            AndroidModule androidModule,
+            ModelModule modelModule,
+            BackendModule backendModule,
+            DatabaseModule databaseModule,
+            AppModule appModule) {
 
-    CoreComponent createCoreComponent(
-            @NonNull final AndroidModule androidModule,
-            @NonNull final ModelModule modelModule) {
-        return DaggerCoreComponent.builder()
+        return DaggerAppComponent.builder()
                 .androidModule(androidModule)
                 .modelModule(modelModule)
+                .backendModule(backendModule)
+                .databaseModule(databaseModule)
+                .appModule(appModule)
                 .build();
     }
 
     @NonNull
-    UiModule getUiModule() {
-        return new UiModule();
+    AppModule createAppModule() {
+        return new AppModule();
     }
 
     @NonNull
-    ModelModule getModelModule() {
+    BackendModule createBackendModule() {
+        return new BackendModule();
+    }
+
+    @NonNull
+    DatabaseModule createDatabaseModule() {
+        return new DatabaseModule();
+    }
+
+    @NonNull
+    ModelModule createModelModule() {
         return new ModelModule();
     }
 
     @NonNull
-    AndroidModule getAndroidModule() {
+    AndroidModule createAndroidModule() {
         return new AndroidModule(this, new Handler());
     }
 
     @NonNull
-    public CoreComponent getCoreComponent() {
-        return coreComponent;
-    }
-
-    @Override
-    @NonNull
-    public UiComponent getUiComponent() {
-        return uiComponent;
+    public AppComponent getAppComponent() {
+        return appComponent;
     }
 }
